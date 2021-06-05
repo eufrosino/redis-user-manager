@@ -19,12 +19,12 @@ const port = 3000;
 const app = express();
 
 // View engine
-app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Body-parser
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended:false }));
 
 // Method override
 app.use(methodOverride('_method'));
@@ -76,7 +76,7 @@ app.post('/user/add', (req, res, next) => {
     }
     console.log(reply);
     res.redirect('/');
-  })
+  });
 });
 
 // Delete user
